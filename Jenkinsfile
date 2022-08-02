@@ -36,9 +36,9 @@ pipeline {
                 echo 'Deploy to UAT'
             }
         }    
-         stage('Depoly to Preprod') {
+         stage('Depoly to Pre_prod') {
             steps {
-                echo 'Deploy to Preprod'
+                echo 'Deploy to Pre_prod'
             }
         }   
          stage('Depoly to prod') {
