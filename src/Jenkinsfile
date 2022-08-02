@@ -13,6 +13,14 @@ pipeline {
                 echo "${env.build_url}"
             }
         }
+        stage ('Prod approval'){
+            steps{
+                script{
+                    if(env.BRANCH_NAME == "master")
+                    input('Proceed for PROD deployement')
+                }
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
