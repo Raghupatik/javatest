@@ -15,6 +15,31 @@ pipeline {
                 echo 'Testing..'
             }
         }
+        stage('Code Quality') {
+            steps {
+                echo 'Quality..'
+            }
+        }
+        stage('Deploy to Dev') {
+            steps{
+                echo 'dev..'
+            }
+        }
+        stage('Deploy to Test') {
+            steps {
+                echo 'Test..'
+            }
+        }
+        stage('Deploy to UAT') {
+            steps{
+                echo 'UAT..'
+            }
+        }
+        stage('Deploy to pre_prod'){
+            steps{
+                echo 'prod..'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
