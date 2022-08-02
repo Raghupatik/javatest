@@ -40,11 +40,26 @@ pipeline {
             steps {
                 echo 'Deploy to Pre_prod'
             }
-        }   
-         stage('Depoly to prod') {
-            steps {
-                echo 'Deploy to prod'
-            }
-        }   
+         
+    post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeded!'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+          mail to: 'team@example.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+        }
+        changed {
+            echo 'Things were different before...'
+        }
     }
+
 }
