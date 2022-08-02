@@ -40,6 +40,8 @@ pipeline {
             steps {
                 echo 'Deploy to Pre_prod'
             }
+         }
+    }
          
     post {
         always {
@@ -61,4 +63,4 @@ pipeline {
             echo 'Things were different before...'
         }
     }
-}}
+}
