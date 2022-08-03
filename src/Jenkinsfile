@@ -12,7 +12,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo "${env.BUILD-NUMBER}"
+                echo "${env.BUILD-URL}"
             }
         }
         stage('Code Quality') {
@@ -27,8 +28,7 @@ pipeline {
         }
         stage('Deploy to Test') {
             steps {
-                echo "${env.BUILD-NUMBER}"
-                echo "${env.BUILD-URL}"
+                echo 'test..'
             }
         }
         stage('Deploy to UAT') {
