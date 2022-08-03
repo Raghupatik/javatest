@@ -35,7 +35,13 @@ pipeline {
                 
             }
 }
-
+         stage('deploy to preprod') {
+            steps {
+                echo 'deploy to preprod'
+                
+                
+            }
+}
 
     }
 }
