@@ -11,6 +11,7 @@ pipeline {
                 sh 'mvn clean package'
             }
           }
+      }
         stage('Test') {
             steps {
                  echo "${env.BUILD_NUMBER}"
