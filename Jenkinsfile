@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Quality'
             }
-        }    
+        }       
         stage('Depoloy to Dev') {
             steps {
                 echo 'depoly to dev'
@@ -62,6 +62,7 @@ pipeline {
               }
             }
         }
+    } 
     
      post {
         always {
@@ -75,13 +76,12 @@ pipeline {
             echo 'I am unstable :/'
         }
         failure {
-          mail to: 'team@example.com',
+             mail to: 'team@example.com',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
         }
         changed {
             echo 'Things were different before...'
         }
-    }
     }
 }
