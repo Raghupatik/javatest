@@ -57,7 +57,6 @@ pipeline {
             echo 'prod'
           }
         } 
-       
     post {
         always {
             echo 'One way or another, I have finished'
