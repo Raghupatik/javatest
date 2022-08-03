@@ -57,7 +57,7 @@ pipeline {
             echo 'prod'
           }
         } 
-    }    
+       
     post {
         always {
             echo 'One way or another, I have finished'
@@ -77,5 +77,6 @@ pipeline {
         changed {
             echo 'Things were different before...'
         }
+    }
     }
 }
