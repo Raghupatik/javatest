@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn clean package'
             }
           }
-      }
+      
         stage('Test') {
             steps {
                  echo "${env.BUILD_NUMBER}"
@@ -57,7 +57,7 @@ pipeline {
             echo 'prod'
           }
         } 
-         
+    }    
     post {
         always {
             echo 'One way or another, I have finished'
