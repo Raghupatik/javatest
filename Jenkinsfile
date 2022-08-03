@@ -54,9 +54,15 @@ pipeline {
        }   
         stage('Depoly to prod') {
           steps {
-            echo 'prod'
-          }
-        } 
+                echo 'prod'
+            }   
+            post {
+              failure{
+                echo 'sending notifications'
+              }
+            }
+        }
+    }
      post {
         always {
             echo 'One way or another, I have finished'
@@ -76,6 +82,5 @@ pipeline {
         changed {
             echo 'Things were different before...'
         }
-    }
     }
 }
