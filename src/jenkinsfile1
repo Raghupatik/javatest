@@ -32,21 +32,21 @@ pipeline {
             }
         }
         stage('Deploy to UAT') {
-            steps{
+            steps {
                 echo 'UAT..'
             }
         }
         stage('Deploy to pre_prod'){
-            steps{
+            steps {
                 echo 'pre_prod..'
             }
         }
         stage('prod Approval') {
             steps {
-                script{
-                  if (env.BRANCH_NAME == "master") {
-                    input('proceed for prod Deployment?')
-                   }
+                script {
+                    if (env.BRANCH_NAME == "master") {
+                      input('Proceed for Prod Deployment?')
+                    }
                 }
             }
         }
