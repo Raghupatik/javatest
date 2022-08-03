@@ -44,6 +44,11 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
+            post {
+                failure{
+                    echo 'sending notification'
+                }
+            }
         }
     }
      post {
