@@ -38,10 +38,22 @@ pipeline {
         }    
          stage('Depoly to Pre_prod') {
             steps {
-                echo 'Deploy to Pre_prod'
+                echo 'Staging'
             }
          }
-    }
+         stage('Prod approval') {
+           steps {
+                 script {
+                    if (env.BRANCH_NAME == "master") {
+                    input('proceed for prod deployment ?')
+                 }
+             }
+          }
+       }   
+        stage('Depoly to prod') {
+          steps {
+            echo 'prod'
+          }
          
     post {
         always {
