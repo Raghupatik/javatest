@@ -44,8 +44,8 @@ pipeline {
         stage('prod Approval') {
             steps {
                 script{
-                  if (env.BRANCH_NAME == 'master') {
-                    input('proceed for prod Deployment'?)
+                  if (env.BRANCH_NAME == "master") {
+                    input('proceed for prod Deployment?')
                    }
                 }
             }
