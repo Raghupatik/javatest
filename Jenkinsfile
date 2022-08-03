@@ -8,18 +8,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh 'mvn clean package'
             }
           }
-        } 
         stage('Test') {
             steps {
-                echo 'Testing..'
+                 echo "${env.BUILD_NUMBER}"
+                 echo "${env.BUILD_URL}"
             }
         }
-        stage('code quality') {
+        stage('Code Quality') {
             steps {
-                echo 'code quality'
+                echo 'Quality'
             }
         }    
         stage('Depoloy to Dev') {
