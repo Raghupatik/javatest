@@ -17,15 +17,17 @@ pipeline {
           echo "${env.BUILD_NUMBER}"
           echo "${env.BUILD_URL}"
         }
+
+
     }
-
-
-    stage('Code Quality') {
+    
+  
+      stage('Code Quality') {
       steps {
-                  echo 'Quality'
+          echo 'Quality'
         }
     }
-        
+
     stage('Deploy to Dev') {
       steps {
           echo 'Dev'
@@ -76,7 +78,7 @@ pipeline {
 
    post {
         always {
-            echo 'I have finished'
+            echo 'I have finished the job successfully'
         }
         success {
             echo 'I succeeded!'
@@ -90,7 +92,7 @@ pipeline {
              body: "Something is wrong with ${env.BUILD_NUMBER}"
         }
         changed {
-            echo 'Things were different before'
+                                    echo 'Things were different before'
         }
     }
 }
