@@ -51,7 +51,7 @@ pipeline {
             echo 'Staging'
           }
     }
-    
+
     stage('Prod Approval') {
       steps {
         script {
