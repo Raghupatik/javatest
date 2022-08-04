@@ -18,9 +18,9 @@ pipeline {
           echo "${env.BUILD_URL}"
         }
     }
-
-
-    stage('Code Quality') {
+  
+  
+      stage('Code Quality') {
       steps {
           echo 'Quality'
         }
