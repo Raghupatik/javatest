@@ -78,7 +78,7 @@ pipeline {
 
    post {
         always {
-            echo 'I have finished'
+            echo 'I have finished the job successfully'
         }
         success {
             echo 'I succeeded!'
