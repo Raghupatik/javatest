@@ -17,8 +17,10 @@ pipeline {
           echo "${env.BUILD_NUMBER}"
           echo "${env.BUILD_URL}"
         }
+
+
     }
-  
+      
   
       stage('Code Quality') {
       steps {
