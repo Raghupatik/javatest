@@ -25,7 +25,7 @@ pipeline {
           echo 'Quality'
         }
     }
-    
+        
     stage('Deploy to Dev') {
       steps {
           echo 'Dev'
